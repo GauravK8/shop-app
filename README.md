@@ -24,6 +24,15 @@
 
 copy env.example file to .env in root of the project and change the values accordingly.
 
+### Start MySQL instalce in docker environment
+
+docker-compose.yml file has been added to start MySQL db local instance.
+Please change in variables in docker-compose.yml file like database, user, password etc.
+and run below command to start db instance.
+```sh
+  docker-compose up -d
+```
+
 ### Run migrations for MySQL Databases
 All migrations have been generated along with product insert script.
 To run migrations run below command
