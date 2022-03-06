@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "ed75d6d0-e272-497a-bfa0-a6b819a92f47",
+		"name": "shop-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"headset\",\n  \"description\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"items\": [\n    {\n      \"item_id\": 1,\n      \"cart_id\": \"3934cce0-fc71-4f3c-bf95-3ccbe08cdf3d\",\n      \"qty\": 7\n    },\n    {\n      \"item_id\": 2,\n      \"cart_id\": \"3934cce0-fc71-4f3c-bf95-3ccbe08cdf3d\",\n      \"qty\": 3\n    },\n    {\n      \"item_id\": 2,\n      \"cart_id\": \"3f12e48f-6ca1-4839-8dc2-4f2a8ce864a9\",\n      \"qty\": 4\n    },\n    {\n      \"item_id\": 1,\n      \"cart_id\": \"3f12e48f-6ca1-4839-8dc2-4f2a8ce864a9\",\n      \"qty\": 2\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/cart?cart_id=3934cce0-fc71-4f3c-bf95-3ccbe08cdf3d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "cart_id",
+							"value": "3934cce0-fc71-4f3c-bf95-3ccbe08cdf3d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"checkout\": {\n    \"cart_id\": \"3934cce0-fc71-4f3c-bf95-3ccbe08cdf3d\",\n    \"total_amount\": 3498,\n    \"contact_no\": \"+9199999999999\",\n    \"email\": \"test@gmail.com\",\n    \"address\": {\n      \"street\": \"SG road\",\n      \"city\": \"Ahmedabad\",\n      \"pincode\": 380001,\n      \"state\": \"Gujarat\",\n      \"country\": \"India\"\n    },\n    \"payment_mode\": \"CASH_ON_DELIVERY\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
