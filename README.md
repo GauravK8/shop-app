@@ -17,7 +17,7 @@
 ### Run Project in development mode
 
 ```sh
-  npm dev
+  npm run dev
 ```
 
 ### Setup Environment
